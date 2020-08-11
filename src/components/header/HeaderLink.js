@@ -7,8 +7,10 @@ export default class HeaderLink extends Component {
     return (
       <NavLink
         to={this.props.to}
+        onClick={this.props.onClick}
         className={styles.link + ' ' + (this.props.red ? styles.linkRed : '')}
         activeClassName={styles.linkActive}
+        exact
       >
         {this.props.children}
       </NavLink>
