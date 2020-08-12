@@ -15,7 +15,7 @@ class Header extends Component {
       <header
         className={`${styles.header} ${
           this.props.isOpened ? styles.headerOpened : ''
-        }`}
+        } ${this.props.className}`}
       >
         {this.props.children}
       </header>
