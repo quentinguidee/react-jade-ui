@@ -6,7 +6,8 @@
     font-size: 13px
     cursor: pointer
     font-weight: 700
-    padding: 9px 18px
+    padding: 9px 12px
+    padding-top: 10px
     border-radius: 6px
     transition: all 0.2s ease-in-out
     display: inline-block
@@ -36,6 +37,7 @@
     color: #9b9b9b
 
     &:hover
+        cursor: not-allowed
         background-color: rgba(0, 0, 0, 0.07)
         box-shadow: none
 
@@ -59,3 +61,49 @@
 
 .big
     padding: 11px 18px
+
+.icon
+    font-size: 16px !important
+    display: inline-block
+    margin-top: -3px
+    vertical-align: middle
+    &Left
+        margin-right: 8px
+    &Right
+        margin-left: 8px
+
+.buttonGroup
+    font-weight: 700
+    display: flex
+    margin-top: 8px
+    border: 1px solid #DEDEDE
+    border-radius: 6px
+    vertical-align: middle
+    color: #4B4B4B
+    transition: all 0.15s
+
+    &:hover
+        background-color: #f1f1f1
+
+    & .button
+        display: inline-block
+        border-radius: 5px
+        font-size: 13px
+        transition: all 0.15s
+        text-transform: uppercase
+        background-color: transparent
+        color: rgba(1, 1, 1, 0.70)
+
+        &:hover
+            cursor: pointer
+            background-color: #d4d4d4
+        
+    & .disabled
+        cursor: not-allowed
+        box-shadow: none
+        color: #9b9b9b
+
+        &:hover
+            cursor: not-allowed
+            background-color: rgba(0, 0, 0, 0.07)
+            box-shadow: none

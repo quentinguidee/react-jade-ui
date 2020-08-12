@@ -11,4 +11,4 @@ export {
   HeaderAccount,
   HeaderHamburger
 } from './components/header/Header'
-export { Button } from './components/button/Button'
+export { Button, ButtonGroup } from './components/button/Button'
