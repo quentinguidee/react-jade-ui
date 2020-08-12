@@ -5,7 +5,9 @@ export default class HeaderAccount extends Component {
   render() {
     return (
       <div className={styles.account}>
-        <div className={styles.account__username}>{this.props.username}</div>
+        <div className={styles.account__username}>
+          {this.props.username || 'Loading...'}
+        </div>
         <img
           className={styles.account__image}
           alt='profile'
