@@ -86,3 +86,66 @@
         width: 32px
         display: inline-block
         border-radius: 50%
+
+.hamburger
+    display: none
+    font-size: 24px
+    line-height: 64px
+    margin-top: -1px
+    margin-right: 8px
+    transition: all 0.2s
+    color: #1d1d1d
+    cursor: pointer
+    vertical-align: middle
+
+    &__icon
+        line-height: 64px
+        vertical-align: middle
+
+@media screen and ( max-width: 1000px )
+    .links
+        position: fixed
+        top: 64px
+        bottom: 0
+        left: 0
+        right: 0
+        margin: 0
+        padding: 0
+        z-index: 100000000
+        height: 100vh
+        max-height: 0
+        overflow: hidden
+        border-top: 1px solid transparent
+        background-color: #ffffff
+        transition: all 0.2s ease-in-out
+
+    .headerOpened .links
+        border-top-color: #e4e4e4
+        padding: 12px 0
+        max-height: 100vh
+
+    .link
+        margin: 8px 26px
+        display: block
+        &-hide
+            display: none
+        &:hover
+            animation: inherit
+
+    .separator
+        margin: 24px 26px
+        height: 24px
+        width: calc(100% - 52px)
+        height: 1px
+        display: block
+        background-color: #ebebeb
+
+    .account
+        display: block
+        padding: 0 8px
+        margin: 8px 26px
+        margin-top: 16px
+        transition: 0.2s all
+
+    .hamburger
+        display: inline-block

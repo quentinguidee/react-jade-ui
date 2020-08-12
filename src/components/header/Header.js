@@ -7,10 +7,19 @@ import HeaderSpacer from './HeaderSpacer'
 import HeaderLogo from './HeaderLogo'
 import HeaderSeparator from './HeaderSeparator'
 import HeaderAccount from './HeaderAccount'
+import HeaderHamburger from './HeaderHamburger'
 
 class Header extends Component {
   render() {
-    return <header className={styles.header}>{this.props.children}</header>
+    return (
+      <header
+        className={`${styles.header} ${
+          this.props.isOpened ? styles.headerOpened : ''
+        }`}
+      >
+        {this.props.children}
+      </header>
+    )
   }
 }
 
@@ -21,5 +30,6 @@ export {
   HeaderSpacer,
   HeaderLogo,
   HeaderSeparator,
-  HeaderAccount
+  HeaderAccount,
+  HeaderHamburger
 }
