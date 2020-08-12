@@ -49,6 +49,7 @@ class Example extends Component {
           <HeaderLink
             onClick={this.closeHamburger}
             href='https://github.com'
+            isExternalLink
             red
           >
             Third Page

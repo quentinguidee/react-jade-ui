@@ -28,8 +28,17 @@ export default class HeaderLink extends Component {
         </NavLink>
       )
     } else {
+      var external = {}
+
+      if (this.props.isExternalLink) {
+        external = {
+          target: '_blank',
+          rel: 'noopener noreferrer'
+        }
+      }
+
       component = (
-        <a href={this.props.href} {...props}>
+        <a href={this.props.href} {...props} {...external}>
           {this.props.children}
         </a>
       )
