@@ -6,5 +6,6 @@ export {
   HeaderLink,
   HeaderSpacer,
   HeaderLogo,
-  HeaderSeparator
+  HeaderSeparator,
+  HeaderAccount
 } from './components/header/Header'

@@ -6,6 +6,7 @@ import HeaderLink from './HeaderLink'
 import HeaderSpacer from './HeaderSpacer'
 import HeaderLogo from './HeaderLogo'
 import HeaderSeparator from './HeaderSeparator'
+import HeaderAccount from './HeaderAccount'
 
 class Header extends Component {
   render() {
@@ -19,5 +20,6 @@ export {
   HeaderLink,
   HeaderSpacer,
   HeaderLogo,
-  HeaderSeparator
+  HeaderSeparator,
+  HeaderAccount
 }
