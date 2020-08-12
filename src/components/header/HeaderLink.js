@@ -7,7 +7,12 @@ export default class HeaderLink extends Component {
     var component
     var props = {
       onClick: this.props.onClick,
-      className: styles.link + ' ' + (this.props.red ? styles.linkRed : ''),
+      className:
+        styles.link +
+        ' ' +
+        (this.props.red ? styles.linkRed : '') +
+        ' ' +
+        (this.props.hide ? styles.linkHidden : ''),
       exact: true
     }
 
