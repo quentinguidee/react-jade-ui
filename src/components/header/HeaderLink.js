@@ -3,9 +3,33 @@ import styles from './sass/header.sass'
 import { NavLink } from 'react-router-dom'
 
 export default class HeaderLink extends Component {
+  constructor(props) {
+    super(props)
+
+    this.renderIcon = this.renderIcon.bind(this)
+
+    this.renderContent = this.renderContent.bind(this)
+  }
+
+  renderContent() {
+    return (
+      <React.Fragment>
+        {this.props.children}
+        {this.renderIcon(this.props.icon)}
+      </React.Fragment>
+    )
+  }
+
+  renderIcon(icon) {
+    if (icon) {
+      return (
+        <i className={'material-icons-round ' + styles.link__icon}>{icon}</i>
+      )
+    }
+  }
+
   render() {
     var component
-    var icon
     var props = {
       onClick: this.props.onClick,
       className:
@@ -17,14 +41,6 @@ export default class HeaderLink extends Component {
       exact: true
     }
 
-    if (this.props.icon) {
-      icon = (
-        <i className={'material-icons-round ' + styles.link__icon}>
-          {this.props.icon}
-        </i>
-      )
-    }
-
     if (this.props.to) {
       component = (
         <NavLink
@@ -33,8 +49,7 @@ export default class HeaderLink extends Component {
           {...props}
           exact
         >
-          {this.props.children}
-          {icon}
+          {this.renderContent()}
         </NavLink>
       )
     } else {
@@ -49,8 +64,7 @@ export default class HeaderLink extends Component {
 
       component = (
         <a href={this.props.href} {...props} {...external}>
-          {this.props.children}
-          {icon}
+          {this.renderContent()}
         </a>
       )
     }

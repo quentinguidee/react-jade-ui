@@ -5,10 +5,46 @@ import { Link } from 'react-router-dom'
 import ButtonsGroup from './ButtonsGroup'
 
 class Button extends Component {
+  constructor(props) {
+    super(props)
+
+    this.renderLeftIcon = this.renderLeftIcon.bind(this)
+    this.renderRightIcon = this.renderRightIcon.bind(this)
+
+    this.renderContent = this.renderContent.bind(this)
+  }
+
+  renderLeftIcon(icon) {
+    if (icon) {
+      return (
+        <i className={`${styles.icon} ${styles.iconLeft} ${'material-icons'}`}>
+          {icon}
+        </i>
+      )
+    }
+  }
+
+  renderRightIcon(icon) {
+    if (icon) {
+      return (
+        <i className={`${styles.icon} ${styles.iconRight} ${'material-icons'}`}>
+          {icon}
+        </i>
+      )
+    }
+  }
+
+  renderContent() {
+    return (
+      <React.Fragment>
+        {this.renderLeftIcon(this.props.leftIcon)}
+        {this.props.children}
+        {this.renderRightIcon(this.props.rightIcon)}
+      </React.Fragment>
+    )
+  }
+
   render() {
-    let component
-    let leftIcon
-    let rightIcon
     const props = {
       className: `
         ${styles.button}
@@ -21,28 +57,11 @@ class Button extends Component {
       onClick: this.props.onClick
     }
 
-    if (this.props.rightIcon) {
-      rightIcon = (
-        <i className={`${styles.icon} ${styles.iconRight} ${'material-icons'}`}>
-          {this.props.rightIcon}
-        </i>
-      )
-    }
-
-    if (this.props.leftIcon) {
-      leftIcon = (
-        <i className={`${styles.icon} ${styles.iconLeft} ${'material-icons'}`}>
-          {this.props.leftIcon}
-        </i>
-      )
-    }
-
+    let component
     if (this.props.to) {
       component = (
         <Link to={this.props.to} {...props}>
-          {leftIcon}
-          {this.props.children}
-          {rightIcon}
+          {this.renderContent()}
         </Link>
       )
     } else if (this.props.href) {
@@ -57,19 +76,11 @@ class Button extends Component {
 
       component = (
         <a href={this.props.href} {...props} {...external}>
-          {leftIcon}
-          {this.props.children}
-          {rightIcon}
+          {this.renderContent()}
         </a>
       )
     } else {
-      component = (
-        <div {...props}>
-          {leftIcon}
-          {this.props.children}
-          {rightIcon}
-        </div>
-      )
+      component = <div {...props}>{this.renderContent()}</div>
     }
 
     return component

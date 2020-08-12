@@ -5,9 +5,10 @@ export default class HeaderAccount extends Component {
   render() {
     return (
       <div
-        className={
-          styles.account + ' ' + (this.props.hide ? styles.accountHidden : '')
-        }
+        className={`
+          ${styles.account}
+          ${this.props.hide ? styles.accountHidden : ''}
+        `}
       >
         <div className={styles.account__username}>{this.props.username}</div>
         <img

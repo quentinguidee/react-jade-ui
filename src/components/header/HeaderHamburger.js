@@ -5,7 +5,7 @@ export default class HeaderHamburger extends Component {
   render() {
     return (
       <div onClick={this.props.onClick} className={styles.hamburger}>
-        <i className={styles.hamburger__icon + ' material-icons-round'}>menu</i>
+        <i className={`${styles.hamburger__icon} material-icons-round`}>menu</i>
       </div>
     )
   }
