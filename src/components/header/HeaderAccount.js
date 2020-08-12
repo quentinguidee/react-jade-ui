@@ -4,10 +4,12 @@ import styles from './sass/header.sass'
 export default class HeaderAccount extends Component {
   render() {
     return (
-      <div className={styles.account}>
-        <div className={styles.account__username}>
-          {this.props.username || 'Loading...'}
-        </div>
+      <div
+        className={
+          styles.account + ' ' + (this.props.hide ? styles.accountHidden : '')
+        }
+      >
+        <div className={styles.account__username}>{this.props.username}</div>
         <img
           className={styles.account__image}
           alt='profile'
