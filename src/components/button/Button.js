@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styles from './sass/button.sass'
 import { Link } from 'react-router-dom'
 
-import ButtonGroup from './ButtonGroup'
+import ButtonsGroup from './ButtonsGroup'
 
 class Button extends Component {
   render() {
@@ -76,4 +76,4 @@ class Button extends Component {
   }
 }
 
-export { Button, ButtonGroup }
+export { Button, ButtonsGroup }
