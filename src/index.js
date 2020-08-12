@@ -2,6 +2,7 @@ import './fonts.sass'
 
 export {
   Header,
+  HeaderLinks,
   HeaderLink,
   HeaderSpacer,
   HeaderLogo,

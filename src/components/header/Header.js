@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './sass/header.sass'
 
+import HeaderLinks from './HeaderLinks'
 import HeaderLink from './HeaderLink'
 import HeaderSpacer from './HeaderSpacer'
 import HeaderLogo from './HeaderLogo'
@@ -12,4 +13,11 @@ class Header extends Component {
   }
 }
 
-export { Header, HeaderLink, HeaderSpacer, HeaderLogo, HeaderSeparator }
+export {
+  Header,
+  HeaderLinks,
+  HeaderLink,
+  HeaderSpacer,
+  HeaderLogo,
+  HeaderSeparator
+}

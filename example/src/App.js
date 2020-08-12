@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import {
   Header,
+  HeaderLinks,
   HeaderLink,
   HeaderSpacer,
   HeaderLogo,
@@ -16,12 +17,14 @@ class Example extends Component {
       <Header>
         <HeaderLogo>Logo</HeaderLogo>
         <HeaderSpacer />
-        <HeaderLink to='/first'>First Page</HeaderLink>
-        <HeaderLink to='/second'>Second Page</HeaderLink>
-        <HeaderSeparator />
-        <HeaderLink to='/third' red>
-          Third Page
-        </HeaderLink>
+        <HeaderLinks>
+          <HeaderLink to='/first'>First Page</HeaderLink>
+          <HeaderLink to='/second'>Second Page</HeaderLink>
+          <HeaderSeparator />
+          <HeaderLink href='github.com' red>
+            Third Page
+          </HeaderLink>
+        </HeaderLinks>
       </Header>
     )
   }
