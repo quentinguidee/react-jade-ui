@@ -42,7 +42,7 @@ class Example extends Component {
           <HeaderLink onClick={this.closeHamburger} to='/first'>
             First Page
           </HeaderLink>
-          <HeaderLink onClick={this.closeHamburger} to='/second'>
+          <HeaderLink onClick={this.closeHamburger} icon='add' to='/second'>
             Second Page
           </HeaderLink>
           <HeaderSeparator />

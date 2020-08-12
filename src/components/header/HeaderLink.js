@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom'
 export default class HeaderLink extends Component {
   render() {
     var component
+    var icon
     var props = {
       onClick: this.props.onClick,
       className:
@@ -16,6 +17,14 @@ export default class HeaderLink extends Component {
       exact: true
     }
 
+    if (this.props.icon) {
+      icon = (
+        <i className={'material-icons-round ' + styles.link__icon}>
+          {this.props.icon}
+        </i>
+      )
+    }
+
     if (this.props.to) {
       component = (
         <NavLink
@@ -25,6 +34,7 @@ export default class HeaderLink extends Component {
           exact
         >
           {this.props.children}
+          {icon}
         </NavLink>
       )
     } else {
@@ -40,6 +50,7 @@ export default class HeaderLink extends Component {
       component = (
         <a href={this.props.href} {...props} {...external}>
           {this.props.children}
+          {icon}
         </a>
       )
     }

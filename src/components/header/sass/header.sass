@@ -16,6 +16,7 @@
     color: #000000
 
     &:hover
+        animation: hover-feedback 0.2s
         color: #313131
 
     &:active
@@ -48,6 +49,7 @@
 
     &:hover
         color: #181818
+        animation: hover-feedback 0.2s
         background-color: rgba(0, 0, 0, 0.1)
 
     &Red
@@ -55,6 +57,12 @@
 
         &:hover
             color: #971d1b
+
+    &__icon
+        font-size: 16px
+        vertical-align: middle
+        margin-left: 4px
+        margin-top: -2.5px
 
 .separator
     display: inline-block
@@ -164,3 +172,11 @@
 
     .hamburger
         display: inline-block
+
+@keyframes hover-feedback
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(0.97)
+    100%
+        transform: scale(1)
