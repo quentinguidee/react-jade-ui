@@ -103,6 +103,12 @@
         vertical-align: middle
 
 @media screen and ( max-width: 1000px )
+    .header
+        z-index: 100000
+        position: fixed
+        width: 100%
+        box-sizing: border-box
+
     .links
         position: fixed
         top: 64px
@@ -116,11 +122,11 @@
         max-height: 0
         overflow: hidden
         border-top: 1px solid transparent
-        background-color: #ffffff
         transition: all 0.2s ease-in-out
 
     .headerOpened .links
         border-top-color: #e4e4e4
+        background-color: #ffffff
         padding: 12px 0
         max-height: 100vh
 
