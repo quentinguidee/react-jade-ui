@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import styles from './sass/button.sass'
+import classNames from 'classnames'
 
 export default class ButtonsGroup extends Component {
   render() {
     return (
-      <div className={`${styles.buttonGroup} ${this.props.className}`}>
+      <div className={classNames(styles.buttonGroup, this.props.className)}>
         {this.props.children}
       </div>
     )

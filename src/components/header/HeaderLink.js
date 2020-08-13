@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './sass/header.sass'
 import { NavLink } from 'react-router-dom'
+import classNames from 'classnames'
 
 export default class HeaderLink extends Component {
   constructor(props) {
@@ -32,12 +33,11 @@ export default class HeaderLink extends Component {
     var component
     var props = {
       onClick: this.props.onClick,
-      className:
-        styles.link +
-        ' ' +
-        (this.props.red ? styles.linkRed : '') +
-        ' ' +
-        (this.props.hide ? styles.linkHidden : ''),
+      className: classNames({
+        [styles.link]: true,
+        [styles.linkRed]: this.props.red,
+        [styles.linkHidden]: this.props.hide
+      }),
       exact: true
     }
 

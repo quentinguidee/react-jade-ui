@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styles from './sass/header.sass'
+import classNames from 'classnames'
 
 import HeaderLinks from './HeaderLinks'
 import HeaderLink from './HeaderLink'
@@ -13,9 +14,11 @@ class Header extends Component {
   render() {
     return (
       <header
-        className={`${styles.header} ${
-          this.props.isOpened ? styles.headerOpened : ''
-        } ${this.props.className}`}
+        className={classNames({
+          [styles.header]: true,
+          [styles.headerOpened]: this.props.isOpened,
+          [this.props.className]: true
+        })}
       >
         {this.props.children}
       </header>

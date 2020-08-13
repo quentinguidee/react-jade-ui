@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styles from './sass/button.sass'
 import { Link } from 'react-router-dom'
+import classNames from 'classnames'
 
 import ButtonsGroup from './ButtonsGroup'
 
@@ -46,14 +47,15 @@ class Button extends Component {
 
   render() {
     const props = {
-      className: `
-        ${styles.button}
-        ${this.props.className}
-        ${this.props.blue ? styles.blue : ''}
-        ${this.props.outline ? styles.outline : ''}
-        ${this.props.disabled ? styles.disabled : ''}
-        ${this.props.loading ? styles.loading : ''}
-        ${this.props.big ? styles.big : ''}`,
+      className: classNames({
+        [styles.button]: true,
+        [styles.blue]: this.props.blue,
+        [styles.outline]: this.props.outline,
+        [styles.disabled]: this.props.disabled,
+        [styles.loading]: this.props.loading,
+        [styles.big]: this.props.big,
+        [this.props.className]: true
+      }),
       onClick: this.props.onClick
     }
 

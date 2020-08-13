@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import styles from './sass/header.sass'
+import classNames from 'classnames'
 
 export default class HeaderAccount extends Component {
   render() {
     return (
       <div
-        className={`
-          ${styles.account}
-          ${this.props.hide ? styles.accountHidden : ''}
-        `}
+        className={classNames({
+          [styles.account]: true,
+          [styles.accountHidden]: this.props.hide
+        })}
       >
         <div className={styles.account__username}>{this.props.username}</div>
         <img
