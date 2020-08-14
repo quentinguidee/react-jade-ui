@@ -12,3 +12,9 @@ export {
   HeaderHamburger
 } from './components/header/Header'
 export { Button, ButtonsGroup } from './components/button/Button'
+export {
+  Popup,
+  PopupTitle,
+  PopupText,
+  PopupActions
+} from './components/popup/Popup'
