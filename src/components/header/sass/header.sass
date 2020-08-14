@@ -121,7 +121,6 @@
 @media screen and ( max-width: 1000px )
     .header
         z-index: 100
-        position: fixed
         width: 100%
         box-sizing: border-box
 
@@ -140,11 +139,14 @@
         border-top: 1px solid transparent
         transition: all 0.2s ease-in-out
 
-    .headerOpened .links
-        border-top-color: #e4e4e4
-        background-color: #ffffff
-        padding: 12px 0
-        max-height: 100vh
+    .headerOpened
+        position: fixed
+        z-index: 10000001
+        & .links
+            border-top-color: #e4e4e4
+            background-color: #ffffff
+            padding: 12px 0
+            max-height: 100vh
 
     .link
         margin: 8px 26px

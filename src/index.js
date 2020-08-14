@@ -18,3 +18,4 @@ export {
   PopupText,
   PopupActions
 } from './components/popup/Popup'
+export { CookiesConsent } from './components/cookiesconsent/CookiesConsent'
