@@ -5,7 +5,10 @@ import classNames from 'classnames'
 export default class ButtonsGroup extends Component {
   render() {
     return (
-      <div className={classNames(styles.buttonGroup, this.props.className)}>
+      <div
+        {...this.props}
+        className={classNames(styles.buttonGroup, this.props.className)}
+      >
         {this.props.children}
       </div>
     )
